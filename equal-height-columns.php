@@ -65,4 +65,11 @@ function run_equal_height_columns() {
 	$plugin->run();
 
 }
-run_equal_height_columns();
+
+// Delay running until WordPress is ready
+add_action(
+    'init',
+    static function () {
+        run_equal_height_columns();
+    },
+);
